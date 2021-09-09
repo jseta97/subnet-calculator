@@ -36,6 +36,10 @@ public class CalculatorController {
             return results;
         } else {
             IPAddress.IPVersion version = addrString.getIPVersion();
+            if (version.isIPv4()) {
+                results.add("It's Ipv4!");
+                return results;
+            }
             BigInteger size = addr.getCount();
             Integer prefixLen = addr.getNetworkPrefixLength();
             IPAddress mask = addr.getNetworkMask();
